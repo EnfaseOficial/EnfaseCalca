@@ -5,11 +5,13 @@
         <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FTB258THRC"></script>
     <script>
+
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'G-FTB258THRC');
+
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,11 +42,24 @@
 
         </div>
     </nav>
-    
+
     <!-- Botão do WhatsApp -->
-    <button type="button" class="btn btn-success btn-lg animated shake" onclick="window.location.href='https://wa.me/5517982270013'" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+    <button type="button" class="btn btn-success btn-lg animated shake" onclick="trackWhatsAppClick()" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
         <i class="fab fa-whatsapp"></i> Fale Conosco
     </button>
+
+    <script>
+        function trackWhatsAppClick() {
+          // Adicione o código do evento de clique do Google Analytics
+          gtag('event', 'click', {
+            'event_category': 'WhatsApp',
+            'event_label': 'BotãoWhatsApp'
+          });
+          
+          // Adicione o redirecionamento do WhatsApp
+          window.location.href = 'https://wa.me/5517982270013';
+        }
+      </script>
 
     <!-- Page Content -->
     <div class="container mt-4">
